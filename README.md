@@ -1,2 +1,5 @@
-# CSE2431_Project
-This dumb shit for Sys II
+CSE2431 Project
+
+Authors: Richard Flagg, KC Miller
+
+
